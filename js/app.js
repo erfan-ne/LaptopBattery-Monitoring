@@ -6,6 +6,10 @@ const showBatteryInfo = () => {
   navigator.getBattery().then((resault) => {
     console.log(resault);
 
+    if (resault.charging) {
+      batteryStatus.innerHTML = `Charging... <i class="ri-flashlight-line animated-green"></i>`;
+    }
+
   });
 };
 
