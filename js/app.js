@@ -9,7 +9,7 @@ const showBatteryInfo = () => {
       batteryStatus.innerHTML = `Charging... <i class="ri-flashlight-line animated-green"></i>`;
     }
     if (resault.level) {
-      const percentage = resault.level * 100;
+      const percentage = Math.floor(resault.level) * 100;
       batteryPercentage.innerHTML = `${percentage}%`;
       batteryLiquid.style.height = `${percentage}%`;
       
