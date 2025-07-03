@@ -26,6 +26,9 @@ const showBatteryInfo = () => {
         batteryLiquid.className = "battery__liquid gradient-color-red";
       }
     }
+
+    resault.addEventListener("levelchange" , showBatteryInfo)
+
   });
 };
 
