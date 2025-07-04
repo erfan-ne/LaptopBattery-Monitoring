@@ -4,7 +4,6 @@ const batteryLiquid = document.querySelector(".battery__liquid");
 
 const showBatteryInfo = () => {
   navigator.getBattery().then((resault) => {
-    console.log(resault);
 
     const percentage = Math.floor(resault.level * 100);
 
