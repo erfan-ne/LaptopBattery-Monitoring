@@ -25,6 +25,11 @@
     hsl(92, 89%, 46%) 15%,
     hsl(92, 90%, 68%) 100%
   );
+  --gradient-color-blue: linear-gradient(
+    90deg,
+    hsl(209, 100%, 43%) 15%,
+    hsl(189, 100%, 50%) 100%
+  );
   --text-color: #fff;
   --body-color: hsl(0, 0%, 11%);
   --container-color: hsl(0, 0%, 9%);
@@ -207,6 +212,11 @@ body {
 .gradient-color-green::after {
   background: var(--gradient-color-green);
 }
+.gradient-color-blue,
+.gradient-color-blue::after {
+  background: var(--gradient-color-blue);
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */

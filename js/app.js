@@ -4,7 +4,6 @@ const batteryLiquid = document.querySelector(".battery__liquid");
 
 const showBatteryInfo = () => {
   navigator.getBattery().then((resault) => {
-
     const percentage = Math.floor(resault.level * 100);
 
     if (resault.charging === true && percentage === 100) {
@@ -20,10 +19,14 @@ const showBatteryInfo = () => {
       }
     }
 
-    if (resault.level) {
+    
+    if (resault.level && resault.charging === true) {
       batteryPercentage.innerHTML = `${percentage}%`;
       batteryLiquid.style.height = `${percentage}%`;
+      
+      batteryLiquid.className = "battery__liquid gradient-color-blue";
 
+    } else {
       if (percentage <= 100) {
         batteryLiquid.className = "battery__liquid gradient-color-green";
       }
