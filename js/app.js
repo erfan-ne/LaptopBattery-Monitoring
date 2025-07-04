@@ -6,6 +6,7 @@ const showBatteryInfo = () => {
   navigator.getBattery().then((resault) => {
     const percentage = Math.floor(resault.level * 100);
 
+
     if (resault.charging === true){
       batteryLiquid.className = "battery__liquid gradient-color-blue";
     } else {
@@ -33,6 +34,8 @@ const showBatteryInfo = () => {
       }
       if (percentage <= 20) {
         batteryStatus.innerHTML = `Low battery <i class="ri-plug-line animated-red"></i>`;
+      } else {
+        batteryStatus.innerHTML = ""
       }
     }
 
@@ -43,6 +46,7 @@ const showBatteryInfo = () => {
     }
 
     resault.addEventListener("levelchange", showBatteryInfo);
+    resault.addEventListener("chargingchange" , showBatteryInfo)
   });
 };
 
